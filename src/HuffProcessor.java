@@ -63,7 +63,6 @@ public class HuffProcessor {
 		}
 		String code = codings[PSEUDO_EOF];
 		out.writeBits(code.length(), Integer.parseInt(code,2));
-		out.close();
 		
 	}
 
@@ -76,7 +75,6 @@ public class HuffProcessor {
 			out.writeBits(1, 1);
 			out.writeBits(BITS_PER_WORD + 1, root.myValue);
 		}
-		out.close();
 		
 		
 	}
