@@ -64,7 +64,7 @@ public class HuffProcessor {
 			}
 		}
 		for(int i = 0; i < codings.length; i++) {
-			String code = codings[i +  65];
+			String code = codings[i];
 			out.writeBits(code.length(), Integer.parseInt(code,2));
 		}
 		String code = codings[PSEUDO_EOF];
@@ -112,7 +112,7 @@ public class HuffProcessor {
 		while(pq.size() > 1) {
 			HuffNode left = pq.remove();
 			HuffNode right = pq.remove();
-			HuffNode t = new HuffNode(0, left.myWeight + right.myWeight, left, right );
+			HuffNode t = new HuffNode(left.myValue + right.myValue, left.myWeight + right.myWeight, left, right );
 			//create new HuffNode t with weight from
 			//left.weight + right.weight, and left and right subtrees
 			pq.add(t);
