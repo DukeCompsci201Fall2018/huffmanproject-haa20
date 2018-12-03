@@ -112,7 +112,7 @@ public class HuffProcessor {
 		while(pq.size() > 1) {
 			HuffNode left = pq.remove();
 			HuffNode right = pq.remove();
-			HuffNode t = new HuffNode(left.myValue + right.myValue, left.myWeight + right.myWeight, left, right );
+			HuffNode t = new HuffNode(-1, left.myWeight + right.myWeight, left, right );
 			//create new HuffNode t with weight from
 			//left.weight + right.weight, and left and right subtrees
 			pq.add(t);
