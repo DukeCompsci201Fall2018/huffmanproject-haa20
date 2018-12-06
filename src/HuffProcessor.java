@@ -101,14 +101,10 @@ public class HuffProcessor {
 		if(root.myLeft == null && root.myRight == null) {
 			encodings[root.myValue] = path;
 			return;
-		}else {
-			if(root.myLeft != null) {
-				codingHelper(root.myLeft, path + "0", encodings);
-			}
-			if(root.myRight != null) {
-				codingHelper(root.myRight, path + "1", encodings);
-			}	
 		}
+		codingHelper(root.myLeft, path + "0", encodings);
+		codingHelper(root.myRight, path + "1", encodings);
+		
 		
 		
 	}
@@ -141,8 +137,9 @@ public class HuffProcessor {
 				break;
 			}
 			freq[bit] = freq[bit] + 1;
+			freq[PSEUDO_EOF] = 1 ;
 		}
-		freq[PSEUDO_EOF] = 1 ;
+		
 		
 		return freq;
 	}
