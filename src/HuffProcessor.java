@@ -65,7 +65,7 @@ public class HuffProcessor {
 //		}
 		for(int i = 0; i < codings.length; i++) {
 			String code = codings[i];
-			if(code != null) {
+			if(code != null && out != null) {
 				out.writeBits(code.length(), Integer.parseInt(code, 2));
 			}	
 		}
@@ -109,7 +109,7 @@ public class HuffProcessor {
 				codingHelper(root.myRight, path + "1", encodings);
 			}	
 		}
-		//return encodings;
+		
 		
 	}
 
