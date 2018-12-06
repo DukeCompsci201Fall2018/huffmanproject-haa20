@@ -65,9 +65,9 @@ public class HuffProcessor {
 //		}
 		for(int i = 0; i < codings.length; i++) {
 			String code = codings[i];
-			if(code != null && out != null) {
+			//if(code != null && out != null) {
 				out.writeBits(code.length(), Integer.parseInt(code, 2));
-			}	
+			//}	
 		}
 		String code = codings[PSEUDO_EOF];
 		out.writeBits(code.length(), Integer.parseInt(code,2));
